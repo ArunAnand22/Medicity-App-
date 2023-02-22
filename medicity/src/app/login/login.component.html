@@ -1,0 +1,39 @@
+<div class="limiter" id="login">
+    <div class="container-login100" style="background-image:url(https://cdn.wallpapersafari.com/25/64/6jVwBz.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="login_topimg">
+                    </div>
+                    <div class="wrap-login100">
+                        <form [formGroup]="loginform" class="login100-form validate-form"> <span class="login100-form-title "> Login </span> <span class="login100-form-subtitle m-b-16"> to your account </span>
+                            <!-- Email input -->
+                            <div class="wrap-input100 validate-input m-b-16"> 
+                                <input class="input100" placeholder="Email"  type="text" formControlName="email" name="email"> <span class="focus-input100"></span> <span class="symbol-input100"> <span class="glyphicon glyphicon-user"></span> </span> 
+                                <div *ngIf="this.loginform.get('email')?.errors && this.loginform.get('email')?.touched" class="text-danger">*Invalid email</div>
+                            </div>
+                            <!-- Password input -->
+                            <div class="wrap-input100 validate-input m-b-16">
+                                 <input class="input100" type="password" placeholder="Password" formControlName="password" name="password"> <span class="focus-input100"></span> <span class="symbol-input100"> <span class="glyphicon glyphicon-lock"></span> </span> 
+                                 <div *ngIf="this.loginform.get('password')?.errors && this.loginform.get('email')?.touched" class="text-danger">*Invalid password</div>
+                                </div>
+
+                            <div class="flex-sb-m w-full p-b-30">
+                                <div class="register text-center">
+                                    New user?
+                                    <a routerLink="/register" class="txt1">
+                                        Register 
+                                    </a>
+                                    <br>
+                                    <a class="text-warning" routerLink="/admin">Admin</a>
+                                </div>
+                            </div>
+                            <div class="container-login100-form-btn p-t-25"> <button class="login100-form-btn" (click)="login()"> Login </button> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

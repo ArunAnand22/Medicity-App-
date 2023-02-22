@@ -1,0 +1,34 @@
+<app-header></app-header>
+<h3 class="text-center mt-5">Favorites</h3>
+<!-- No content section -->
+<div class="container" *ngIf="favoritestores==''">
+  <div class="row">
+    <div class="col text-center">
+      <img src="https://media1.tenor.com/images/abc924c38da265f9049f09be4f48b1e1/tenor.gif?itemid=13093113" alt="No favorite">
+      <h3 class="mb-5">Favorites is empty</h3>
+    </div>
+  </div>
+</div>
+<!-- Content section -->
+<div class="container" *ngIf="favoritestores">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 mt-5" *ngFor="let favorite of favoritestores">
+        <!-- Card section -->
+        <div class="card text-center" style="width: 18rem;">
+            <img src={{favorite.image}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{favorite.pharmacy}}</h5>
+              <p class="card-text">Home Delivery: {{favorite.delivery}}</p>
+              <p class="card-text">Phone: {{favorite.phone}}</p>
+              <div class="d-flex justify-content-evenly">
+                <button class="btn btn-info"><a href={{favorite.location}}><i class="fa-solid fa-location-dot"></i></a></button>
+                <button class="btn btn-success"><a href="https://wa.me/{{favorite.phone}}"><i class="fa-brands fa-whatsapp text-white"></i></a></button>
+                <button class="btn btn-danger" (click)="removefromfavorite(favorite)"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+    </div>
+<app-footer></app-footer>

@@ -1,0 +1,13 @@
+table,tr,thead,tbody{
+    border: 2px solid grey;
+    padding: 10px;
+}
+th,td{
+    border: 1px solid black;
+    padding: 15px;
+}
+.float-button{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+}

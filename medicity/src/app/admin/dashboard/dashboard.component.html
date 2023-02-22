@@ -1,0 +1,79 @@
+<app-admin-header></app-admin-header>
+<!-- Modal section for adding new store-->   
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Store</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">  
+            <!-- form start -->
+          <form [formGroup]="addstoreForm">
+            <input type="text" class="form-control" placeholder="Place" formControlName="place">
+            <div *ngIf="this.addstoreForm.get('place')?.errors && this.addstoreForm.get('place')?.touched" class="text-warning">*Invalid details</div>
+            <input type="text" class="form-control mt-4" placeholder="Pharmacy name" formControlName="pharmacy">
+            <div *ngIf="this.addstoreForm.get('pharmacy')?.errors && this.addstoreForm.get('pharmacy')?.touched" class="text-warning">*Invalid details</div>
+            <!-- Radio button -->
+            <input type="text" class="form-control mt-4" placeholder="Home Delivery" formControlName="delivery">
+            <div *ngIf="this.addstoreForm.get('delivery')?.errors && this.addstoreForm.get('delivery')?.touched" class="text-warning">*Invalid details</div>
+
+            <!-- Radio button end-->
+            <input type="number" class="form-control mt-4" placeholder="Phone number" formControlName="phone">
+            <div *ngIf="this.addstoreForm.get('phone')?.errors && this.addstoreForm.get('phone')?.touched" class="text-warning">*Invalid Number</div>
+            <input type="number" class="form-control mt-4" placeholder="PIN code" formControlName="pin">
+            <div *ngIf="this.addstoreForm.get('pin')?.errors && this.addstoreForm.get('pin')?.touched" class="text-warning">*Invalid PIN</div>
+            <input type="text" class="form-control mt-4" placeholder="Image-link" formControlName="image">
+            <div *ngIf="this.addstoreForm.get('image')?.errors && this.addstoreForm.get('image')?.touched" class="text-warning">*Invalid</div>
+            <input type="text" class="form-control mt-4" placeholder="Location-link" formControlName="location">
+            <div *ngIf="this.addstoreForm.get('location')?.errors && this.addstoreForm.get('location')?.touched" class="text-warning">*Invalid </div>
+          </form>
+          <!-- form end -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="addStore()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal section end-->
+
+
+<div class="container text-center">
+    <p class="mt-5 fs-4">Client section: <br><span class="fs-5">The details can be searched updated and deleted and will reflect on the user page</span></p>
+</div>
+        <!-- Content section -->
+        <div class="container">
+            <div class="row d-flex" >
+                <div class="col">
+                    <table style="margin-top:80px;" class="mb-5">
+                            <thead>
+                                <tr>
+                                <th>Name</th>
+                                <th>Place</th>
+                                <th>Home Delivery</th>
+                                <th>Phone</th>
+                                <th>Location</th>
+                                <th>Edit</th>
+                                <th>Remove</th>
+                                </tr>
+                            </thead>
+                        <tbody *ngFor="let store of allstores | filter:searchTerm:'place'">
+                            <tr>
+                                <td>{{store.pharmacy}}</td>
+                                <td>{{store.place}}</td>
+                                <td>{{store.delivery}}</td>
+                                <td>{{store.phone}}</td>
+                                <td><a href={{store.location}}>Link</a></td>
+                                <td><a class="btn btn-secondary" href="edit-user/{{store._id}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                <td><button (click)="deleteStore(store)" class="btn btn-warning"><i class="fa-solid fa-trash text-danger"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Floating Button -->
+            <button class="btn btn-info float-button" (click)="addStore()" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <!-- Card Container end -->  
+        <app-footer></app-footer>

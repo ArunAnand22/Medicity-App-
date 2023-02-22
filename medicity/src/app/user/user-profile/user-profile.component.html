@@ -1,0 +1,35 @@
+<app-header></app-header>
+<!-- Modal Section -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Account?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete account?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+          <button type="button" (click)="deletetheUser()" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal Section end-->
+
+
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://www.clipartkey.com/mpngs/m/146-1461473_default-profile-picture-transparent.png" alt="..." /></div>
+    <div class="col-lg-5 text-center">
+        <h1>Name: {{user}}</h1>
+        <p>Email: {{email}}</p>
+        <div class="">
+        <button class="btn btn-warning" routerLink="/user-favorites/{{email}}">Favorites</button>
+        <button class="btn btn-danger mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete account</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

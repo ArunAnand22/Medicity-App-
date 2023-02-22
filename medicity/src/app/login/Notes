@@ -1,0 +1,41 @@
+                                Frontend 
+                                -Angular-
+
+    Description: 
+        This is a service based website to connect between pharmacy owners and customers so that they can directly check with the clients their needs and if they have home delivery options available.The search will be based on name of store as well as the location.
+-------------------------------------------------------------------------------
+                                Initial Stage
+-------------------------------------------------------------------------------
+1.Login and register must be available for users
+    -Only the login users get access to home page
+    -User can have one to one chat with the clients(store owners)
+
+2.Admin Side -
+ -Seperate login page for clients:
+        Clients can create page for their stores ..get one to one chat with the users and delete their account and leave
+
+ -Admin must have dashboard to master everything:
+     -Register page for clients should be on admin side
+     -Can remove client pages
+     -Create new client pages
+     -Get list of all the users
+     -Remove users from database
+
+Functions:
+1.One to one chat
+2.Search via location as well as store name
+3.Checking if the store is closed or not
+
+-------------------------------------------------------------------------------
+                                Future Updations
+-------------------------------------------------------------------------------
+1.Real time chat with clients using socket io
+2.Creating database for client medicines checking if they have medicine in stock.
+3.Tracking Order
+4.Payment through app
+5.Call function
+
+color:
+Navbar #182978
+body   #ACBFE6
+card #6688CC

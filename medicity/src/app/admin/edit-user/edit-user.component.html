@@ -1,0 +1,29 @@
+<app-admin-header></app-admin-header>
+<div class="container">
+    <!-- form start -->
+    <form [formGroup]="updatestoreForm">
+        <h1 class="text-center mt-5">Update</h1>
+        <input type="text" class="form-control mt-4" placeholder="Place" formControlName="place">
+        <div *ngIf="this.updatestoreForm.get('place')?.errors && this.updatestoreForm.get('place')?.touched" class="text-warning">*Invalid details</div>
+        <input type="text" class="form-control mt-4" placeholder="Pharmacy name" formControlName="pharmacy">
+        <div *ngIf="this.updatestoreForm.get('pharmacy')?.errors && this.updatestoreForm.get('pharmacy')?.touched" class="text-warning">*Invalid details</div>
+        <!-- Radio button -->
+        <input type="text" class="form-control mt-4" placeholder="Home Delivery" formControlName="delivery">
+        <div *ngIf="this.updatestoreForm.get('delivery')?.errors && this.updatestoreForm.get('delivery')?.touched" class="text-warning">*Invalid details</div>
+
+        <!-- Radio button end-->
+        <input type="number" class="form-control mt-4" placeholder="Phone number" formControlName="phone">
+        <div *ngIf="this.updatestoreForm.get('phone')?.errors && this.updatestoreForm.get('phone')?.touched" class="text-warning">*Invalid Number</div>
+        <input type="text" class="form-control mt-4" placeholder="PIN code" formControlName="pin">
+        <div *ngIf="this.updatestoreForm.get('pin')?.errors && this.updatestoreForm.get('pin')?.touched" class="text-warning">*Invalid PIN</div>
+        <input type="text" class="form-control mt-4" placeholder="Image-link" formControlName="image">
+        <div *ngIf="this.updatestoreForm.get('image')?.errors && this.updatestoreForm.get('image')?.touched" class="text-warning">*Invalid</div>
+        <input type="text" class="form-control mt-4" placeholder="Location-link" formControlName="location">
+        <div *ngIf="this.updatestoreForm.get('location')?.errors && this.updatestoreForm.get('location')?.touched" class="text-warning">*Invalid </div>
+        <div class="mt-5 mb-5">
+            <button class="btn btn-danger" routerLink="/admin-dash">Go back</button>
+            <button class="btn btn-success mx-5" (click)="updateStore()">Update</button>
+        </div>
+      </form>
+</div>
+<app-footer></app-footer>
