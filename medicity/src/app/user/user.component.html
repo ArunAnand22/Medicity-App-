@@ -2,18 +2,17 @@
 <div class="container" *ngIf="!searchTerm">
     <!-- Headline -->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://media.giphy.com/media/Xfnpzut3hM1Uqb7J6z/giphy.gif" alt="..." /></div>
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://media.istockphoto.com/vectors/facade-pharmacy-store-with-a-signboard-vector-id857777676?k=6&m=857777676&s=612x612&w=0&h=xrMJGK13yMYC91OyAyxkLd782yv4O2rto6Vhm2BeGoM=" alt="..." /></div>
         <div class="col-lg-5">
           <p class="fs-3">Welcome <span class="text-primary">{{user}}</span></p>
-            <h1 class="font-weight-bold text-danger">Donate Blood Save Life</h1>
-            <p> <span class="fs-4"> One bottle of blood equals one life. </span><br>Contact Us for blood donation</p>
-            <a class="btn btn-outline-primary" routerLink="">Contact</a>
+            <h1 class="font-weight-bold text-danger">Our team of <span>Medicity</span></h1>
+            <p>We are here to help you with purchasing medicines</p>
         </div>
     </div>
 </div>
 <!-- Headline end -->
 <!-- Call to Action-->
-<div class="card text-white my-5 py-4 text-center" style="background-color: #728ec7;" *ngIf="!searchTerm">
+<div class="card text-white my-5 py-4 text-center" style="background-color: #3fa0b0;" *ngIf="!searchTerm">
     <div class="card-body"><p class="text-white m-0">| Search by location or name of the store | </p></div>
 </div>
 <!-- Call to Action end-->
@@ -22,9 +21,9 @@
  <!-- Content Row-->
  <div class="row gx-4 gx-lg-5 ">
     <div class="col-md-4 mb-5" *ngFor="let product of allproducts | filter:searchTerm:'place'">
-        <div class="card h-100" style="background-color: #6688CC;">
+        <div class="card h-100" style="background-color: #dfdce3;">
             <!-- Add to favorites-->
-            <div class="position-absolute" style="top: 0.5rem; right: 0.5rem"><button class="btn" (click)="addtoFavorite(product)" style="background-color: rgba(0,0,0,0.8);"><i class="fa-solid fa-heart fs-3 text-danger"></i></button></div>
+            <div class="position-absolute" style="top: 0.5rem; right: 0.5rem"><button class="btn" (click)="addtoFavorite(product)" style="background-color: rgba(0,0,0,0.5);"><i class="fa-solid fa-heart fs-3 text-danger"></i></button></div>
             <!--image-->
             <img class="card-img-top" src={{product.image}} alt="..." width="100px" height="350px" />
             <!-- Product details-->
@@ -34,7 +33,7 @@
                     <h5 class="fw-bolder">{{product.pharmacy}}</h5>
                     <!-- Product price-->
                     <span>Home Delivery:</span>
-                    <span class="fs-5 text-light">{{product.delivery}}</span>
+                    <span class="fs-5 text-success">{{product.delivery}}</span>
                     <p class="fs-5 pt-3">{{product.place}}</p>
                 </div>
             </div>
@@ -49,8 +48,8 @@
         </div>
         <div class="modal-body text-center">
           <img src={{product.image}} width="200px">
-          <p class="mt-3">Place: {{product.phone}}</p>
-          <p>Phone: {{product.place}}</p>
+          <p class="mt-3">Place: {{product.place}}</p>
+          <p>Phone: {{product.phone}}</p>
           <p>PIN: {{product.PIN}}</p>
           <p>Home delivery: <span class="text-success"> {{product.delivery}} </span></p>
         </div>
@@ -66,7 +65,7 @@
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="d-flex justify-content-evenly">
                     <!-- Modal button -->
-                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Know more</button>
+                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Read more</button>
                 </div>
             </div>
         </div>

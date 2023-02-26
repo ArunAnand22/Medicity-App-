@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #182978;position: sticky;top: 0;z-index: 1;">
-    <div class="container px-5">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #10899c;position: sticky;top: 0;z-index: 1;">
+    <div class="container px-5">  
         <a class="navbar-brand" routerLink="/user"><i class="fa-solid fa-capsules"></i> Medicity</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -9,7 +9,7 @@
                 <input (keyup)="search($event)" type="text" style="background-color: #c3cbdb;" class="form-control mt-1" placeholder="Search..">
                 <!-- Searchbar end -->
                 <li class="nav-item"><button class="btn text-light" (click)="gotofavorite()">Favorites</button></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/user-profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link text-light" routerLink="/user-profile">Profile</a></li>
                 <button class="btn" (click)="logoutUser()"><i class="fa-solid fa-right-from-bracket text-danger"></i></button>
             </ul>
         </div>
